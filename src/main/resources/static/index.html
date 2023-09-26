@@ -1,29 +1,143 @@
 <!DOCTYPE html>
 
-
-
 <!-- Esto es un comentario -->
 
 <!--Etiqueta de inicio -->
 <html>
-    <head>
-        <!--Titulo pagina -->
-        <title>TechShop</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <!--Todo lo del codigo va aqui -->
-    <body>
-        <a href="ejemplo4.html">Back</a>|
-        <a href="index.html">Home</a>|
-        <a href="ejemplo2.html">Next</a><hr>
-        
-        
-        
-        <h1 style="text-align: center;background-color: blueviolet;color: white">Home</h1>  <!--Titutlo -->
-        <p>Esta es la primera página del curso</p>   <!--Parrafo -->
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit viverra varius taciti fermentum hendrerit, cras urna ultricies tristique cubilia. Hac facilisis tincidunt metus in lacus magnis pharetra purus rhoncus odio eleifend torquent, mauris molestie auctor taciti duis sollicitudin id cras ultricies vestibulum. Mattis congue fermentum platea curae lacus donec placerat quam velit porta, pulvinar dignissim risus rhoncus molestie sed fringilla facilisi netus.</p> 
-        <p>Fermentum eget taciti sociis maecenas facilisis sodales varius laoreet dictumst potenti augue quam integer platea, curae mus dignissim tincidunt velit libero parturient risus ante erat egestas ridiculus proin. Interdum magna phasellus dictumst ac sociosqu eget tempor taciti commodo habitant netus duis, quam dis primis integer nullam vitae platea mattis est nostra. Placerat non hac vel dictumst orci varius, felis rutrum auctor litora integer eu, nisi augue in egestas malesuada.</p> 
-    </body>
-    <!--Etiqueta de fin -->
+    <header>
+        <!--Esta funcion es como cuando uno estripa el logo de alguna pagina y lo lleva a home -->
+        <a href="index.html"><h1>TechShop</h1></a>
+        <nav>
+            <!-- &triangleleft; de esta forma se ponen iconos -->
+            <a href="ejemplo4.html">&triangleleft;</a>|      
+            <a href="ejemplo2.html">&triangleright;</a>
+            <a href="ejemplo2.html">Nosotros</a>
+            <a href="ejemplo2.html">Gestion</a>
+            <a href="ejemplo2.html">Ventas</a>
+
+            <!-- En esta linea lo que hacemos para agregar lo del paquete estilos nada mas lo arrastramos aqui dentro del header-->
+            <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        </nav>
+    </header>
+    <aside>
+
+        <h2 class= "aviso" >Carlos y Evelyn </h2>
+        <p>Segun el informe de ventas el producto mas vendido de nuestra empresa es el celular</p>
+
+    </aside> 
+    
+    <section>
+        <h2>Nuestros Productos</h2>  
+
+        <!--Esta es una etiqueta informativa -->
+        <article>
+            <h3>XR-128</h3>
+
+
+            <!-- Aca hacemos algo tipo opcional al mostrar la imagen con el figure -->
+            <figure>
+                <!--aca lo que hicimos fue copiar la direccion de la imagen en google y la pegamos aca,tambien le pusimos la altura de 150 pixeles-->            
+
+                <img src="https://www.barcimaster.com/wp-content/uploads/2020/10/iphone-xr-blue-select-201809.png" height="150" alt="alt"/>
+                <!-- Pie de la figure-->
+                <figcaption>$650.000.00 <a href="#">Add<a/> </figcaption>
+            </figure>
+            <p class="aviso">Lorem ipsum dolor sit amet consectetur ngilla facilisi netus.</p> 
+            <hr/>
+        </article>
+
+
+        <article>
+            <h3>AD-821</h3>
+            <figure>
+                <!--aca lo que hicimos fue copiar la direccion de la imagen en google y la pegamos aca,tambien le pusimos la altura de 150 pixeles-->            
+
+                <img src="https://www.polyscience.com/media/rybnzlnv/ad45r_fr_084.png?width=342&height=274&rnd=133053222908800000" height="150" alt="alt"/>
+                <!-- Pie de la figure-->
+                <figcaption>$100.000.00 <a href="#">Agregar<a/> </figcaption>
+            </figure>
+            <p>Fermentum eget taciti atea, curae mus dignissi est nostra.<span class="aviso"> Placerat non hac vel dictumst</span> orci variusmalesuada.</p> 
+            <hr/>
+        </article>
+
+
+
+        <article>
+            <h3>VIVO-X</h3>
+            <figure>
+                <!--aca lo que hicimos fue copiar la direccion de la imagen en google y la pegamos aca,tambien le pusimos la altura de 150 pixeles-->            
+
+                <img src="https://miphonemx.com/cdn/shop/files/10008312_1681820882507_750x750_png_800x.webp?v=1683041749" height="150" alt="alt"/>
+                <!-- Pie de la figure-->
+                <figcaption>$2500.00.00<a href="#">Add<a/> </figcaption>
+            </figure>
+            <p>phasellus dictumst ac sociosqu eget tempor taciti commodo habitant netus du
+        </article>
+
+        <article>
+            <h3>Listado de productos</h3>
+            <table border="0">
+
+                <!-- Encabezado -->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Codigo</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>XR-128</td>
+                        <td>$189.000</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>AD-821</td>
+                        <td>$932394.33</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>VIVO-X</td>
+                        <td>$70.00</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>XR-128</td>
+                        <td>$189.000</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>AD-821</td>
+                        <td>$932394.33</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>VIVO-X</td>
+                        <td>$70.00</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </article>
+    </section>
+
+    <!--Se usa para poner temas reservados y cosas como whatsaap  &copy es para poner la marca de los derechos-->
+    <footer>
+        Derechos Reservados TechShop 2023 &copy;
+    </footer>
+
+
+    
+    
+</body>
+<!--Etiqueta de fin -->
 </html>
