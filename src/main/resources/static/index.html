@@ -4,28 +4,33 @@
 
 <!--Etiqueta de inicio -->
 <html>
-    <header>
+    <header class="header">
         <!--Esta funcion es como cuando uno estripa el logo de alguna pagina y lo lleva a home -->
-        <a href="index.html"><h1>TechShop</h1></a>
-        <nav>
-            <!-- &triangleleft; de esta forma se ponen iconos -->
-            <a href="ejemplo4.html">&triangleleft;</a>|      
-            <a href="ejemplo2.html">&triangleright;</a>
-            <a href="ejemplo2.html">Nosotros</a>
-            <a href="ejemplo2.html">Gestion</a>
-            <a href="ejemplo2.html">Ventas</a>
 
-            <!-- En esta linea lo que hacemos para agregar lo del paquete estilos nada mas lo arrastramos aqui dentro del header-->
-            <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <nav class="nav">
+            <!-- &triangleleft; de esta forma se ponen iconos -->
+            <a class="logo nav-link" href="index.html">TechShop</a>
+            <ul class="nav-menu">
+                <li class="nav-menu-iten"><a class="nav-link nav-menu-link" href="ejemplo4.html">&triangleleft;</a></li>   
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="ejemplo2.html">&triangleright;</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="audio.html">Audios</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="video.html">Videos</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="iframe.html">iFrame</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="formulario.html">Formularios</a></li> 
+            </ul>
+
+
+
         </nav>
     </header>
     <aside>
 
-        <h2 class= "aviso" >Carlos y Evelyn </h2>
+        <h2 class= "aviso" >últimas Noticias </h2>
         <p>Segun el informe de ventas el producto mas vendido de nuestra empresa es el celular</p>
 
     </aside> 
-    
+
     <section>
         <h2>Nuestros Productos</h2>  
 
@@ -136,8 +141,8 @@
     </footer>
 
 
-    
-    
+
+
 </body>
 <!--Etiqueta de fin -->
 </html>

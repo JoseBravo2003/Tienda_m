@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!-- Esto es un comentario -->
+
+<!--Etiqueta de inicio -->
+<html>
+   <header class="header">
+        <!--Esta funcion es como cuando uno estripa el logo de alguna pagina y lo lleva a home -->
+
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <nav class="nav">
+            <!-- &triangleleft; de esta forma se ponen iconos -->
+            <a class="logo nav-link" href="index.html">TechShop</a>
+            <ul class="nav-menu">
+                <li class="nav-menu-iten"><a class="nav-link nav-menu-link" href="ejemplo4.html">&triangleleft;</a></li>   
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="ejemplo2.html">&triangleright;</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="audio.html">Audios</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="video.html">Videos</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="iframe.html">iFrame</a></li> 
+                <li class="nav-menu-iten" ><a class="nav-link nav-menu-link" href="formulario.html">Formularios</a></li> 
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <aside>
+
+        <h2 class= "aviso" >últimas Noticias </h2>
+        <p>Segun el informe de ventas el producto mas vendido de nuestra empresa es el celular</p>
+
+    </aside> 
+    
+    <section>
+        <h2>Registro de Usuario</h2>  
+        <!--Este es un formulario -->
+        <!---->
+        <form action="/usuario/registro"
+              method="post">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <th>Usuario</th>
+                        <th><input type="email" 
+                                   placeholder="correo@correo.com"
+                                   required
+                                   name="usuario" value="" size="25" /></th>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td><input type="text" 
+                                   required
+                                   name="nombre" value="" size="45" /></td>
+                    </tr>
+                    <tr>
+                        <td>Clave</td>
+                        <td><input type="password"
+                                   required
+                                   name="clave" value="" size="10" /></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td><input type="number" 
+                                   required
+                                   min="18"
+                                   max="25"
+                                   name="edad" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Registro" /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>    
+    </section>
+
+    <!--Se usa para poner temas reservados y cosas como whatsaap  &copy es para poner la marca de los derechos-->
+    <footer>
+        Derechos Reservados TechShop 2023 &copy;
+    </footer>
+    
+</body>
+<!--Etiqueta de fin -->
+</html>
