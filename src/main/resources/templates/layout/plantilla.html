@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:fragment="head">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/js/rutinas.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>        
     </head>
@@ -24,9 +24,6 @@
                         <ul class="navbar-nav" sec:authorize="hasRole('ROLE_VENDEDOR')">
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>                           
-
-
-                            <!-- aQUI SE DEFINE QUIEN PUEDE INGRESAR A ESTE APARTADO-->
                             <li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')">
                                 <a class="nav-link dropdown-toggle" 
                                    data-bs-toggle="dropdown" 
@@ -36,7 +33,7 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
-                                    <li><a class="dropdown-item" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
+                                    <li><a class="dropdown-item"  th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
                                 </ul>
                             </li>
 
@@ -50,23 +47,29 @@
                                 </ul>
                             </li>
                         </ul>
-                        <!-- LOGIN SI NO ESTA LOGIADO ENTRA ACA--->
-                        <ul class="navbar-nav" sec:authorize='!isAuthenticated' >
-                            <li class='nav-item px-2'>
-                                <a class="nav-link"  th:href="@{/login}">
-                                    <i class='fas fa-sing-in-alt'></i>
+                        <ul class="navbar-nav" sec:authorize="!isAuthenticated()">
+                            <li class="nav-item px-2">
+                                <a class="nav-menu-link nav-link" th:href="@{/login}">
+                                    <i class='fas fa-sign-in-alt'></i>
                                 </a>
-                            </li>
+                            </li>                            
                         </ul>
-                        <!-- LOGOUT SI ESTA LOGEADO ENTRE AQUIA--->
-                        <ul class="navbar-nav"sec:authorize='isAuthenticated'>
-                            <li class='nav-item text-white my-auto'>
-                                <a class="nav-link"  th:href="@{/logout}">
-                                    <i class='fas fa-sing-in-alt'></i>
-                                </a>
+                        <ul class="navbar-nav" sec:authorize="isAuthenticated()">
+                            <li class="nav-item text-white my-auto">
+                                <img th:src="@{${session.usuarioImagen}}"
+                                     heigh="40"
+                                     class="rounded-circle"/>
+                                <span sec:authentication='name'>Santi</span>
                             </li>
+                            <li class="nav-item my-auto">
+                                <form method="post" th:action="@{/logout}">
+                                    <button class="btn btn-dark">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </form>
+                            </li>                            
                         </ul>
-                    </div>
+                    </div>                                                                                       
                 </div>
             </nav>
             <section id="main-header" class="py-2 bg-success text-white">
@@ -81,4 +84,3 @@
         </header>
     </body>
 </html>
-

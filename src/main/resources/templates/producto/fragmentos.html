@@ -10,7 +10,8 @@
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">   
+                    <!-- AQUI DEFINIMOS QUIEN PUEDE VER LOS BOTONES DENTRO DEL TD-->
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">   
                         <button 
                             type="button" 
                             class="btn btn-primary btn-block" 
@@ -114,8 +115,8 @@
                                             <th>[[#{producto.total}]]</th>
                                             <th>[[#{producto.activo}]]</th>
                                             <th>[[#{producto.categoria}]]</th>
-
-                                            <th></th></tr>
+                                            <th sec:authorize="hasRole('ROLE_ADMIN')"></th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="producto, contador : ${productos}">
@@ -127,7 +128,9 @@
 
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
                                             <td >[[${producto.categoria.descripcion}]]</td>
-                                            <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
+                                            <!-- AQUI DEFINIMOS QUIEN PUEDE VER LOS BOTONES DENTRO DEL TD-->
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')">
+                                                <a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/producto/modificar/}+${producto.idProducto}"
