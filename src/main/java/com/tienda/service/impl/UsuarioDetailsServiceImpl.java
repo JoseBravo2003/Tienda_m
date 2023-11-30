@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UsuarioDetailsServiceImpl
         implements UsuarioDetailsService, UserDetailsService {
 
+    @Autowired
     private UsuarioDao usuarioDao;
     @Autowired
     private HttpSession session;

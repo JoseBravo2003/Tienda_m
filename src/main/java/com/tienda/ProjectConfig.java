@@ -69,7 +69,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/usuario/nuevo", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
                         "/reportes/**"
-                           /* Los listados solo lo ven los ADMIN */
+                /* Los listados solo lo ven los ADMIN */
                 ).hasRole("ADMIN")
                 .requestMatchers(
                         "/producto/listado",
@@ -77,7 +77,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/usuario/listado"
                 ).hasAnyRole("ADMIN", "VENDEDOR")
                 .requestMatchers("/facturar/carrito")
-                         /* Los listados de factura y de mas solo lo ven los USER */
+                /* Los listados de factura y de mas solo lo ven los USER */
                 .hasRole("USER")
                 )
                 .formLogin((form) -> form
@@ -88,13 +88,10 @@ public class ProjectConfig implements WebMvcConfigurer {
 
     /* El siguiente método se utiliza para completar la clase no es 
     realmente funcional, la próxima semana se reemplaza con usuarios de BD */
-    /* Estos son los usuarios del programa
-        Aca definimos que puede hacer cada Usuario*/
-    @Bean
+    
+    /*@Bean
     public UserDetailsService users() {
-        
-         
-         
+
         UserDetails admin = User.builder()
                 .username("juan")
                 .password("{noop}123")
@@ -111,17 +108,15 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
-    }
+    }*/
     @Autowired
     private UserDetailsService userDetailsService;
-    
+
     @Autowired
-    public void configurerGlobal(AuthenticationManagerBuilder build) 
+    public void configurerGlobal(AuthenticationManagerBuilder build)
             throws Exception {
         build.userDetailsService(userDetailsService).passwordEncoder(
-                new BCryptPasswordEncoder());        
+                new BCryptPasswordEncoder());
     }
-    
-    
 
 }
