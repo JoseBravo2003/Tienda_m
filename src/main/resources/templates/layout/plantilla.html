@@ -34,6 +34,7 @@
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
                                     <li><a class="dropdown-item"  th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
+                                    <li><a class="dropdown-item"  th:href="@{/reportes/principal}">[[#{plantilla.reportes}]]</a></li>
                                 </ul>
                             </li>
 
@@ -57,7 +58,7 @@
                         <ul class="navbar-nav" sec:authorize="isAuthenticated()">
                             <li class="nav-item text-white my-auto">
                                 <img th:src="@{${session.usuarioImagen}}"
-                                     heigh="5px"
+                                     heigh="40"
                                      class="rounded-circle"/>
                                 <span sec:authentication='name'>Jhon</span>
                             </li>
